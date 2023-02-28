@@ -53,9 +53,10 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
   #define _delay_ms(t) delay(t)
 #endif
 
-#ifndef _BV
-  #define _BV(bit) (1<<(bit))
-#endif
+//TienTN change
+//#ifndef _BV
+//  #define _BV(bit) (1<<(bit))
+//#endif
 
 
 #include "stdlib.h"
@@ -240,7 +241,8 @@ updateBoundingBox(x1,y1,x1+5,y1+8);
 void ST7565::RunStatus(int x, int y,byte a,unsigned int t,char *c, bool color) { 
   
  bool non=!color;
-t=abs(101-t);
+//TienTN change
+t=abs((int)(101-t));
 byte b,d,m,w;
 unsigned int  i;
 
